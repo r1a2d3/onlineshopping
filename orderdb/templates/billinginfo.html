@@ -1,0 +1,49 @@
+{%extends "base1.html" %}
+{% block content %}
+ <body>
+		<form action='/orderdb/addorderdetail/' method='post' >{% csrf_token %}
+        <table border="0" width="1200" height="800" align="center">
+                <tr>
+                    <th align='center'><h1>Enter Delivery Info</h1></th>
+                </tr>
+                <tr>
+                    <td align=''><h2>NAME :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="name" style="width: 500px;height: 30px" required /></h2></td>
+				</tr>
+				<tr>
+                    <td align=''><h2>Phone Number :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text"  pattern="[789][0-9]{9}" name="mo.no." style="width: 250px;height: 30px" required/></h2></td>
+				</tr>
+				<tr>
+                    <td align=''><h2>CITY :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="city" style="width: 300px;height: 30px" required/></h2></td>
+				</tr>
+				<tr>
+                    <td align=''><h2>Area or street :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="area" style="width: 500px;height: 30px" required/></h2></td>
+				</tr>
+				<tr>
+                    <td align=''><h2>Flat no.,Bulding name :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="bname" style="width: 500px;height: 30px" required/></h2></td>
+				</tr>
+				<tr>
+                    <td align=''><h2>Landmark :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="landmark" style="width: 500px;height: 30px" /></h2></td>
+				</tr>
+				<tr>
+                    <td align=''><h2>Pincode :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="pincode" pattern="[0-9]{6}" style="width: 200px;height: 30px" required/>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+                    State :&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="state" style="width: 300px;height: 30px" required/></h2></td>
+				</tr>
+				
+				<tr>
+                    <th align='center'><h1><input type='submit' value='continue' style="align-content: center;width: 200px;height: 35px"/></h1></th>
+                </tr>
+		</table>
+		
+		</form>
+</body>
+
+{% endblock %}

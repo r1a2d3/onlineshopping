@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8" >
+		<title>Online Shop</title>
+	</head>
+	<body>
+		{% load static %}
+
+		<link rel="stylesheet" type="text/css" href="{% static 'loginmodule/style.css' %}"/>
+		<table align='center' width="1200" height="10">
+		<tr>
+		<td>
+		<h1 align="center"><a href='/onlineshoppingapp/index1'>HOME</a></h1>
+		</td>
+		<td>
+		<h1 align="center">Welcome To Online Shop {{request.session.userid}}</h1>
+		</td>
+		<td>
+		<h1 align='center'><a href='/cartdb/cart'>CART</a></h1>
+		</td>
+		</tr>
+		</table>
+		{%block content %}
+		{%endblock %}
+	</body>
+</html>

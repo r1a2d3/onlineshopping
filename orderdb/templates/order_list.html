@@ -1,0 +1,26 @@
+{%extends "base1.html" %}
+{% block content %}
+	<h1>Order List</h1>
+	
+	<h1>Welcome {{userid}}</h1>
+	{% if order1 %}
+	{% for order in order1 %}
+		<h1 align="center">ITEM</h1>
+		<table border="1" width="1200" height="500" align="center">
+		<tr><td>FirstName</td><td colspan='2'>{{ order.fname }}</td></tr>
+		<tr><td>MiddleName</td><td colspan='2'>{{order.mname}}</td></tr>
+		<tr><td>LastName</td><td colspan='2'>{{order.lname}}</td></tr>
+		<tr><td>EmailID</td><td colspan='2'>{{order.email}}</td></tr>
+		<tr><td>Mobile NO</td><td colspan='2'>{{order.mobileno}}</td></tr>
+		<tr><td>Addressline1</td><td colspan='2'>{{order.add1}}</td></tr>
+		<tr><td>Addressline2</td><td colspan='2'>{{order.add2}}</td></tr>
+		<tr><td>City</td><td colspan='2'>{{order.city}}</td></tr>
+		<tr><td>State</td><td colspan='2'>{{order.state}}</td></tr>
+		<tr><td>Pincode</td><td colspan='2'>{{order.pincode}}</td></tr>
+		<tr><td>PaymentMethod</td><td colspan='2'>{{order.paymentmethod}}</td></tr>
+		</table>
+	{% endfor %}
+	{% else %}
+	<p>There are no order placed.</p>
+	{% endif %}
+{% endblock %}

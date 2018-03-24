@@ -1,0 +1,16 @@
+{%extends "base1.html" %}
+{% block content %}
+<body>
+	<h1 align='center'>Your Order is placed</h1>
+	<table border="0" width="500" height="20" align="center">
+	<tr><td><h1 align="center">Delivery Address</h1></td></tr>
+	<tr><td><h3 >{{address.0}}</h3></td></tr>
+	<tr><td><h4>{{address.1}}</h4></td></tr>
+	<tr><td><h4>{{address.2}} , {{address.3}} , {{address.4}}</h4></td></tr>
+	<tr><td><h4>{{address.5}}-{{address.7}} </h4></td></tr>
+	</table>
+	<h1 align='center'>Product is deliverd on {{ddate}}</h1>
+	<br>
+	<h1 align='center'>Thank you for shopping with us</h1>
+</body>
+{% endblock %}

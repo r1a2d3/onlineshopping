@@ -1,0 +1,66 @@
+{%extends "base1.html" %}
+{% block content %}
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>IPHONEX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+	
+        <table border="0" width="1200" height="800" align="center">
+            <thead>
+                <tr>
+                    <th colspan="5"><h1>Product details</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" rowspan="10" align="center"><img src="https://cdn2.gsmarena.com/vv/pics/apple/apple-iphone-x-new-1.jpg" width="500" height="500"/>
+                    </td>
+                    <td width="200" align="center"><input type="radio" name="size" value="32GB" checked="checked" style="height: 30px;width: 30px"/><font size="15">32 GB</td>
+                    <td width="200" align="center"><input type="radio" name="size" value="64GB" style="height: 30px;width: 30px"/><font size="15">64 GB</td>
+                    <td width="200" align="center"><input type="radio" name="size" value="128GB" style="height: 30px;width: 30px"/><font size="15">128 GB</td>
+                </tr>
+                <tr>
+                    <td align="center"><font size="15">PRICE</td>
+                    <td colspan="2" align="center"><font size="15">Rs.80000</td>
+                </tr>
+                <tr>
+                    <td  colspan="3" align="center"><font size="15">In stoke</td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><p><font size="5">Delivery to your address within 7-10 days.</p></td> 
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><p><font size="5">10% cashback on debit card or credit card.</p></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><p><font size="5">Brand Warrenty of 1 year.</p></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><p><font size="5">10 Days of replacement policy.</p></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><input type="submit" value="MORE DETAILS" style="width: 500px;height: 30px"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><form action="/cartdb/addtocart" method='post'>{% csrf_token %}
+					<input type="hidden" value="p1" name="productid">
+					<input type="submit" value="ADD TO CART" name="add to card" onclick="alert('Item is added to cart')" style="width: 500px;height: 30px"/></td></form>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center"><form action="/orderdb/placeorder" method='post'>{% csrf_token %}<input type="submit" value="BUY NOW" name="buy now" style="width: 500px;height: 30px"/></form></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
+{% endblock %}

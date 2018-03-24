@@ -1,0 +1,90 @@
+{%extends "base1.html" %}
+{% block content %}
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MY CART</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table border="1" width="1200" height="800" align="center">
+            <thead>
+                <tr>
+                    <th><h1>Place Order</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <form action="/orderdb/addorderdetail/" method='post'>{% csrf_token %}
+                            <label align="center"><p style="align-content: center"><font size="5">Full Name :</label></p>&nbsp;
+                            <br>
+                           First Name:
+                           <input type="text" name="first name" value="" style="width: 250px;height: 25px" />&nbsp;
+                            Middle Name:
+                            <input type="text" name="middle name" value="" style="width: 250px;height: 25px" />&nbsp;
+                            Last Name:
+                            <input type="text" name="last name" value="" style="width: 250px;height: 25px" />&nbsp;
+                            <br>
+                            <br>
+           
+                            Email ID :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" name="email id" value="" style="width: 250px;height: 25px" />&nbsp;
+                            <br>
+                            <br>
+                            Contact NO. :&nbsp;
+                            
+                            <input type="text" name="mo.no." value="" style="width: 250px;height: 25px"/>&nbsp;
+                            <br>
+                            <label align="center"><p style="align-content: center"><font size="5">Billing address :</p></label>
+                           
+                            Address line 1:
+                            <input type="text" name="address line 1" value="" style="width: 500px;height: 25px" />
+                            <br>
+                            <br>
+                         
+                            Address line 2:
+                            <input type="text" name="address line 2" value="" style="width: 500px;height: 25px"/>
+                            <br>
+                            <br>
+                            City:
+                            <input type="text" name="city" value="" style="width: 250px;height: 25px"/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            State:
+                            <input type="text" name="state" value="" style="width: 250px;height: 25px" />
+                            <br>
+                            <br>
+                            Pincode :
+                            <input type="text" name="pincode" value="" style="width: 250px;height: 25px"/>
+                            <br>
+                           
+                            <label align="center"><p style="align-content: center"><font size="6">Payment option :</label>
+                            <br>
+                            <input type="radio" name="payment" value="CASH ON DELIVERY" checked="checked" style="height: 17px;width: 17px"/><font size="5">CASH ON DELIVERY
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="payment" value="CREDIT CARD" style="height: 17px;width: 17px" /><font size="5">CREDIT CARD
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="payment" value="DEBIT CARD" style="height: 17px;width: 17px" /><font size="5">DEBIT CARD
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="payment" value="OTHER" style="height: 17px;width: 17px" /><font size="5">OTHER
+                            <br>
+                            <input type="submit" value="PLACE ORDER" name="PLACE ORDER" onclick="alert('Your order is placed')" style="align-content: center;width: 200px;height: 35px"  />
+                            <br>
+                            
+                        </form>
+                    </td>
+                
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
+{% endblock %}
