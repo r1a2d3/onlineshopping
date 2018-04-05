@@ -16,5 +16,11 @@
 			</div>
 			<div class="row buttons">
 				<input type="submit" value="login" class="btn"/>
+				
 			</div>
+			</form>
+			<form action='/registration/signup/' method='post'>{% csrf_token %}
+			<input type="submit" value='Sign Up'>
+			</form>
+	
       {% endblock %}

@@ -23,4 +23,5 @@ urlpatterns = [
 	url(r'^orderdb/',include('orderdb.urls')),
 	url(r'^cartdb/',include('cartdb.urls')),
 	url(r'^productdb/',include('productdb.urls')),
+	url(r'^registration/',include('registration.urls')),
 ]

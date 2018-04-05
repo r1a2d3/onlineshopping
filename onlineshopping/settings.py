@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 	'orderdb',
 	'cartdb',
 	'productdb',
+	'registration'
 ]
 
 MIDDLEWARE = [
