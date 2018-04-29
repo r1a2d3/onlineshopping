@@ -26,6 +26,6 @@
 					<form action='/orderdb/placeorder/' method='post'>{% csrf_token %}
 					<h1 align='center'><input type='submit' value="Proceed to Checkout" style="align-content: center;width: 200px;height: 35px"/></h1></h1>
 	{% else %}
-	<p>There are no item in your cart placed.</p>
+	<p>There are no item in your cart.</p>
 	{% endif %}
 {% endblock %}

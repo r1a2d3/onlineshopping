@@ -24,12 +24,7 @@
 		<h1 align='center'>
 		<input type="radio" name="payment" value="CASH ON DELIVERY" checked="checked" style="height: 17px;width: 17px"/><font size="5">CASH ON DELIVERY
                             
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="payment" value="CREDIT CARD" style="height: 17px;width: 17px" /><font size="5">CREDIT CARD
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="payment" value="DEBIT CARD" style="height: 17px;width: 17px" /><font size="5">DEBIT CARD
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="payment" value="OTHER" style="height: 17px;width: 17px" /><font size="5">OTHER</h1>
+                           
 							
 		<form action='/orderdb/ordersuccess/' method='post'>{% csrf_token %}
 		<h1 align='center'><input type="submit" value="PLACE ORDER" style="align-content: center;width: 200px;height: 35px"/></h1>

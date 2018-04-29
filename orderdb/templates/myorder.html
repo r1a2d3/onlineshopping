@@ -1,0 +1,38 @@
+{%extends "base1.html" %}
+{% block content %}
+	{% if ord %}
+	{% for order in ord %}
+	{% for product in pro %}
+	{% ifequal order.productid product.productid%}
+	<h1 align="center"></h1>
+		<table border="1" width="1200" height="50" align="center">
+		<tr>
+			<td colspan='2' align='center'>
+			
+			<img src={{product.url}} width="150" height="150" /></td>
+			<td><h2 align='center'>{{product.pname}}</h2></td>
+			<td><h2 align='center'>Price is:  {{product.price}}</h2></td>
+			<td><h2 align='center'>Delivery on<br>{{order.ddate }} </h2></td>
+			<td><h2 align='center'>{{order.name}}<br>{{order.mobileno}} </h2></td>
+			<td><h2 align='center'>Order placed on<br>{{order.ordertime}} </h2></td>
+			
+		</tr>
+		{% if order.ddate < today%}
+		<tr><td align='center' colspan='7'>
+			<h2>product is delivered to you on {{order.ddate}}</h2> 
+			</td>
+		</tr>
+		{% else %}
+		<tr><td align='center' colspan='7'>
+			<h2>product is delivered to you in {{ order.ddate|timeuntil:today  }}</h2> 
+			</td>
+		</tr>
+		{% endif %}
+		</table>
+	{% endifequal %}
+	{% endfor %}
+	{% endfor %}
+	{% else %}
+	<p>There are no order placed.</p>
+	{% endif %}
+{% endblock %}

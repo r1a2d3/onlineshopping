@@ -6,5 +6,6 @@ urlpatterns = [
 	url(r'^addorderdetail/$', views.addorderdetail),
 	url(r'^orderdetail/$', views.orderdetail),
 	url(r'^ordersuccess/$',views.ordersuccess),
+	url(r'^vieworder/$',views.vieworder),
 	url('orders/', views.OrderListView.as_view(), name ='orders'),
 ]

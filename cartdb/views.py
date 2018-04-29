@@ -6,7 +6,9 @@ from django.views import generic
 from django.template.context_processors import csrf
 from .models import Cart
 from productdb.models import Product
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/loginmodule/login/')
 def addtocart(request):
 	username = request.session.get('userid')
 	productid1 = request.POST.get('productid', '')
@@ -17,11 +19,13 @@ def addtocart(request):
 		return HttpResponseRedirect('/orderdb/placeorder')
 	else:
 		return HttpResponseRedirect('/onlineshoppingapp/index1')
-	
+
+@login_required(login_url='/loginmodule/login/')
 def viewcart(request):
 	product = Product.objects.all()
 	return HttpResponseRedirect('/productdb/getproduct')
 
+@login_required(login_url='/loginmodule/login/')
 def cart(request):
 	userid=request.session.get('userid')
 	cart = Cart.objects.filter(username=userid)
@@ -34,6 +38,7 @@ def cart(request):
 		tp+=pr.price
 	return render(request,'cart_list.html',{'cart1' : cart , 'product1' : product ,'tprice':tp})
 
+@login_required(login_url='/loginmodule/login/')
 def delete(request):
 	productid= request.GET.get('productid','')
 	s1 = Cart.objects.filter(productid=productid).delete()

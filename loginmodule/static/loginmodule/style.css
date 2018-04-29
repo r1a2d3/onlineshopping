@@ -1,6 +1,9 @@
 body {
     background: white url("images/123.jpg") no-repeat;
-
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	height: 100%; 
 }
 
 h1

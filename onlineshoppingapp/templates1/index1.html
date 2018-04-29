@@ -3,16 +3,16 @@
 <body>
     <table border="1" width="1300" height="500" align="center">
         <thead>
-            <tr>
-				<td><input type="button" value="HOME" name="HOME" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="CLOTHS FOR MEN" name="CLOTHS FOR MEN" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="CLOTHS FOR WOMEN" name="CLOTHS FOR WOMEN" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="ELECTRONICS" name="ELECTRONICS" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="MOBILES" name="MOBILES" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="COMPUTERS" name="COMPUTERS" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="FOOT WEAR" name="FOOT WEAR" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="BOOKS" name="BOOKS" style="width: 100%;height: 70" /></td>
-				<td><input type="button" value="TVs & APPLIANCES" name="TVs & APPLIANCES" style="width: 100%;height: 70" /></td>
+            <tr height='50'>
+				<form  action='/onlineshoppingapp/index1' method='post'>{% csrf_token %}
+				<td><input type="submit" value="FASHION FOR MEN" name="cat" style="width: 100%;height: 100%;font-size: larger;color:black;background-color:lightgreen" /></td>
+				<td><input type="submit" value="FASHION FOR WOMEN" name="cat" style="width: 100%;height: 100%;font-size: larger;color:black;background-color:lightgreen" /></td>
+				<td><input type="submit" value="ELECTRONICS" name="cat" style="width: 100%;height: 100%;font-size: larger;color:black;background-color:lightgreen" /></td>
+				<td><input type="submit" value="MOBILES" name="cat" style="width: 100%;height: 100%;font-size: larger;color:black;background-color:lightgreen" /></td>
+				<td><input type="submit" value="COMPUTERS & ACCESSORIES" name="cat" style="width: 100%;height: 100%;font-size: larger;color:black;background-color:lightgreen" /></td>
+				
+				<td><input type="submit" value="TVs & APPLIANCES" name="cat" style="width: 100%;height: 100%;font-size: larger;color:black;background-color:lightgreen" /></td>
+				</form>
 			</tr>
 		</thead>
 	</table>
@@ -21,7 +21,7 @@
 		<tr>
 			{% for product in product1%}
 			<td align="center"><img src={{product.url}} width="150" height="150" /><br>
-            <font align="center" size="5">10% discount</font>
+            <font align="center" size="5">Rs.{{product.price}}</font>
 			<form action="select" method='post'>{% csrf_token %}
 			<input type="hidden" value={{product.productid}} name="productid">
             <input type="submit" value="VIEW" style="width: 100px"/></form><br>	

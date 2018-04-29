@@ -5,3 +5,4 @@ class Product(models.Model):
 	qty= models.IntegerField()
 	url = models.CharField(max_length=1000000)
 	pname = models.CharField(max_length=1000,default="")
+	category=models.CharField(max_length=1000,default='')

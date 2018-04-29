@@ -6,11 +6,18 @@ from django.http import HttpResponseRedirect
 from django.views import generic
 from django.template.context_processors import csrf
 from productdb.models import Product
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/loginmodule/login/')
 def index(request):
-	p1=Product.objects.all()
+	cat=request.POST.get('cat','')
+	if cat!='':
+		p1=Product.objects.filter(category=cat)
+	else:
+		p1=Product.objects.all()
 	return render(request, 'index1.html', {'product1' : p1})
 
+@login_required(login_url='/loginmodule/login/')
 def select(request):
 	pid=request.POST.get('productid','')
 	p1=Product.objects.filter(productid=pid)

@@ -8,12 +8,15 @@ from .models import Order
 from cartdb.models import Cart
 from productdb.models import Product
 import datetime
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/loginmodule/login/')
 def placeorder(request):
 	c={}
 	c.update(csrf(request))
 	return render(request,'billinginfo.html', )
-	
+
+@login_required(login_url='/loginmodule/login/')	
 def addorderdetail(request):
 	name =request.POST.get('name','')
 	mobileno = request.POST.get('mo.no.','')
@@ -44,7 +47,8 @@ def addorderdetail(request):
 		tp+=pr.price
 	dd=datetime.date.today() + datetime.timedelta(days=7)
 	return render(request,'orderinfo.html' ,{'address':add , 'cart1':cart,'product1':product,'tprice':tp,'ddate':dd})
-	
+
+@login_required(login_url='/loginmodule/login/')
 def ordersuccess(request):
 	add=request.session.get('address')
 	dd=datetime.date.today() + datetime.timedelta(days=7)
@@ -67,7 +71,20 @@ def ordersuccess(request):
 		o.save()
 	o1=Cart.objects.filter(productid__in=pid).delete()
 	return render(request,'ordersuccess.html',{'ddate':dd,'address':add})
-	
+
+@login_required(login_url='/loginmodule/login/')
+def vieworder(request):
+	userid=request.session.get('userid')
+	o=Order.objects.filter(userid=userid)
+	pid=[]
+	for p in o:
+		pid.append(p.productid)
+	p=Product.objects.filter(productid__in=pid)
+	td=datetime.date.today()
+	return render(request,'myorder.html',{'pro':p,'ord':o,'today':td})
+
+
+@login_required(login_url='/loginmodule/login/')
 def orderdetail(request):
 	userid=request.session.get('userid')
 	return render_to_response('order_list.html',{'order1' : o , 'userid' : request.session.get('userid')} )
